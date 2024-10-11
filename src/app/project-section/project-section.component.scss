@@ -1,0 +1,12 @@
+@use "bulma/sass/utilities/mixins";
+
+$skills-text-color: #000000;
+$skills-title-color: #14213D;
+
+.title {
+    color: $skills-title-color;
+}
+
+.project-grid {
+    padding: 2rem 0 4rem;
+}

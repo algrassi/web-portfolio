@@ -1,0 +1,17 @@
+@use "bulma/sass/utilities/mixins";
+
+.section.is-primary {
+    background-color: #435987;
+    color: white;
+}
+
+.section.is-long{
+    padding-bottom: 14rem;
+
+    @include mixins.from(769px) {
+        padding-bottom: 16rem;
+    }
+    @include mixins.from(1216px) {
+        padding-bottom: 18rem;
+    }
+}

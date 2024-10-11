@@ -1,0 +1,58 @@
+@use "bulma/sass/utilities/mixins";
+
+$skills-text-color: #000000;
+$skills-title-color: #14213D;
+
+.title{
+    color: $skills-title-color;
+}
+.subtitle {
+    color: $skills-text-color;
+}
+
+.section.skills{
+    margin-top: -5rem;
+    padding-bottom: 1rem;
+
+    .box {
+        padding: 0;
+        margin-inline: 10rem;
+        @include mixins.until(769px){
+            margin-inline: 0;
+        }
+        background-color: #fff;
+        box-shadow: 0 5px 5px 0 rgba(233, 240, 243, 0.5), 0 0 0 1px #E6ECF8;
+    }
+
+    .columns {
+        margin: 0;
+        .column {
+            background-color: transparent;
+
+            .circle {
+                color: #FCA311;
+            }
+            .icon {
+                color: #fff;
+            }
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding-left: 0;
+            }
+        }
+
+        .column.has-border-right {
+            border-right: 0;
+            @include mixins.from(769px){
+                border-right: 0.5px solid rgb(219, 222, 223);
+            }
+        }
+        .column.has-border-top {
+            border-top: 0;
+            @include mixins.until(769px){
+                border-top: 0.5px solid rgb(219, 222, 223);
+            }
+        }
+    }
+}
