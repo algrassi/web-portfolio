@@ -39,9 +39,19 @@
         transition: .45s ease-in-out;
     }
 }
+
 .image:hover .overlay{
     opacity: 1;
 }
+
 .image:hover figcaption{
     opacity: 1;
+}
+@include mixins.from(769px){
+    .image:hover, .image:active .overlay{
+        opacity: 1;
+    }
+    .image:hover, .image:active figcaption{
+        opacity: 1;
+    }
 }

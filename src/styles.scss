@@ -1,1 +1,51 @@
-/* You can add global styles to this file, and also import other style files */
+@charset "UTF-8";
+$section-button: #FCA311;
+$section-button-focus-border: #ac6e0a9d;
+$section-button-title-color: #14213D;
+
+@import "../node_modules/bulma/sass/utilities/initial-variables";
+
+$primary: darkorange;
+
+@import "../node_modules/bulma/bulma";
+
+html {
+    overflow-y: scroll;
+    background-color: #ffffff;
+}
+
+.navbar {
+    padding: 1.2rem 0;
+    box-shadow: none;
+    z-index: auto;
+    background-color: transparent;
+
+    .container {
+        align-items: stretch;
+        display: flex;
+        min-height: 3.25rem;
+        width: 100%;
+    }
+}
+
+.button.is-outlined.is-rounded.is-medium {
+    color: #fff;
+    padding: 0.5em 2em;
+    border-width: 2px;
+}
+.button.is-outlined.is-rounded.is-navbar {
+    color: $section-button-title-color;
+    //padding: 0.5em 2em;
+    //border-width: 2px;
+}
+.button.is-success.is-outlined {
+    background-color: transparent;
+    border-color: $section-button;
+}
+.button.is-success.is-outlined:hover {
+    background-color: $section-button;
+}
+.button.is-success.is-outlined:focus {
+    background-color: $section-button;
+    border-color: $section-button-focus-border;
+}

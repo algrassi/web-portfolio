@@ -1,7 +1,5 @@
 $section-contact-background: #14213D;
 $section-background: #435987;
-$section-button: #FCA311;
-$section-button-focus-border: #ac6e0a9d;
 .section {
     background-color: transparent;
     
@@ -9,23 +7,5 @@ $section-button-focus-border: #ac6e0a9d;
         margin-top: 10rem;
         background-color: $section-contact-background;
         box-shadow: none;
-
-        .button.is-outlined.is-rounded.is-medium {
-            color: #fff;
-            padding: 0.5em 2em;
-            border-width: 2px;
-        }
-
-        .button.is-success.is-outlined {
-            background-color: transparent;
-            border-color: $section-button;
-        }
-        .button.is-success.is-outlined:hover {
-            background-color: $section-button;
-        }
-        .button.is-success.is-outlined:focus {
-            background-color: $section-button;
-            border-color: $section-button-focus-border;
-        }
     }
 }

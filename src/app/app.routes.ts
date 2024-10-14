@@ -1,16 +1,16 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { ContactMeComponent } from './contact-me/contact-me.component';
+import { EmailFormComponent } from './email-form/email-form.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 export const routes: Routes = [
     {
         path: '',
-        component: HomeComponent,
+        component: HomePageComponent,
         title: 'Home Page',
     },
     {
         path: 'contact_me',
-        component: ContactMeComponent,
-        title: 'Home Details',
-    },
+        component: EmailFormComponent,
+        title: 'Send Message',
+    }
 ];
