@@ -1,4 +1,17 @@
 @use "bulma/sass/utilities/mixins";
+$title-text-color: #14213D;
+$subtitle-text-color: #FCA311;
+
+.title, .label {
+    color: $title-text-color;
+}
+.subtitle {
+    color: $subtitle-text-color;
+}
+.input, .textarea {
+    background-color: #fff;
+    color: #14213D;
+}
 
 .avatar {
     width: 84px;

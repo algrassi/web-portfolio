@@ -12,34 +12,43 @@
     </section>
     <section class="section">
         <div class="container">
-            <form accept-charset="UTF-8" action="https://usebasin.com/f/8bd40e0dd0f8" method="POST">
-                <div class="field is-horizontal">
-                    <div class="field-body">
+            <form id="form" accept-charset="UTF-8" action="https://usebasin.com/f/8bd40e0dd0f8" method="POST" enctype="multipart/form-data">
+                <div class="columns is-centered">
+                    <div class="column is-half">
                         <div class="field">
-                            <label class="label">Name</label>
+                            <label for="name" class="label">Name</label>
                             <div class="control">
-                                <input class="input" type="text" placeholder="Enter your name">
+                                <input class="input" name="name" type="text" placeholder="Enter your name">
                             </div>
                         </div>
+                    </div>
+                    <div class="column is-half">
                         <div class="field">
-                            <label class="label">Email</label>
+                            <label for="email" class="label">Email</label>
                             <div class="control">
-                                <input class="input" type="email" placeholder="Enter your email">
+                                <input class="input" name="email" type="email" placeholder="Enter your email">
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="field">
-                    <label class="label">Message</label>
-                    <div class="control">
-                        <textarea class="textarea" placeholder="Enter your message"></textarea>
+                <div class="columns is-centered">
+                    <div class="column">
+                        <div class="field">
+                            <label for="message" class="label">Message</label>
+                            <div class="control">
+                                <textarea class="textarea" name="message" placeholder="Enter your message"></textarea>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <div class="field is-grouped is-grouped-centered">
-                    <div class="control">
-                        <button class="button is-rounded">Submit</button>
+                
+                <div class="columns is-centered">
+                    <div class="column is-one-third">
+                        <div class="field">
+                            <div class="control">
+                                <button type="submit" class="button is-rounded">Submit</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </form>

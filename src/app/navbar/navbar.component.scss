@@ -1,3 +1,49 @@
+@use "bulma/sass/utilities/mixins";
+
+@include mixins.until(1024px){
+    .navbar {
+        .container {
+            display: block;
+        }
+    }
+    .navbar-menu.is-active {
+        background-color: transparent;
+        display: block;
+    }
+    .navbar-item{
+        .buttons{
+            justify-content: center;
+        }
+    }
+    .navbar-burger:active, .navbar-burger:hover {
+        background-color: transparent;
+    }
+}
 .svg {
     max-height: 6rem;
 }
+
+.navbar-burger {
+    color: #14213D;
+}
+.navbar-burger span:nth-child(1) {
+    top: calc(50% - 6px);
+}
+.navbar-burger span:nth-child(2) {
+    top: calc(50% - 1px);
+}
+.navbar-burger span:nth-child(3) {
+    top: calc(50% + 4px);
+}
+
+.navbar-burger.is-active span:nth-child(1) {
+    transform: translateY(5px) rotate(-45deg);
+}
+.navbar-burger.is-active span:nth-child(2) {
+    opacity: 0;
+}
+.navbar-burger.is-active span:nth-child(3) {
+    transform: translateY(-5px) rotate(45deg);
+    opacity: 1;
+}
+
