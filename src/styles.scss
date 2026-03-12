@@ -1,19 +1,44 @@
 @charset "UTF-8";
-$section-button: #FCA311;
-$section-button-focus-border: #ac6e0a9d;
-$section-button-title-color: #14213D;
 
+// ─── Design Tokens ────────────────────────────────────────────────────────────
+$bg-base:      #0c0c14;
+$bg-surface:   #111118;
+$bg-elevated:  #1a1a28;
+$accent:       #e8b84b;
+$accent-dim:   rgba(232, 184, 75, 0.12);
+$text-main:    #e4e4f0;
+$text-muted:   #606080;
+$border:       #1e1e30;
+
+// ─── Bulma variable overrides (must come BEFORE import) ───────────────────────
 @import "../node_modules/bulma/sass/utilities/initial-variables";
 
-$primary: darkorange;
+$primary: $accent;
+$success: $accent;
 
 @import "../node_modules/bulma/bulma";
 
+// ─── Base ─────────────────────────────────────────────────────────────────────
 html {
     overflow-y: scroll;
-    background-color: #ffffff;
+    background-color: $bg-base;
+    scroll-behavior: smooth;
 }
 
+body {
+    background-color: $bg-base;
+    color: $text-main;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6,
+.title {
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+// ─── Navbar ───────────────────────────────────────────────────────────────────
 .navbar {
     padding: 1.2rem 0;
     box-shadow: none;
@@ -28,24 +53,60 @@ html {
     }
 }
 
+// ─── Buttons ──────────────────────────────────────────────────────────────────
 .button.is-outlined.is-rounded.is-medium {
-    color: #fff;
-    padding: 0.5em 2em;
+    color: $accent;
+    border-color: $accent;
     border-width: 2px;
+    padding: 0.5em 2em;
+    background-color: transparent;
+    transition: background-color 0.2s ease, color 0.2s ease;
+
+    &:hover, &:focus {
+        background-color: $accent;
+        color: $bg-base;
+        border-color: $accent;
+    }
 }
+
 .button.is-outlined.is-rounded.is-navbar {
-    color: $section-button-title-color;
-    //padding: 0.5em 2em;
-    //border-width: 2px;
+    color: $accent;
+    border-color: $accent;
+    background-color: transparent;
+    transition: background-color 0.2s ease, color 0.2s ease;
+
+    &:hover, &:focus {
+        background-color: $accent;
+        color: $bg-base;
+        border-color: $accent;
+    }
 }
+
 .button.is-success.is-outlined {
     background-color: transparent;
-    border-color: $section-button;
+    border-color: $accent;
+    color: $accent;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
-.button.is-success.is-outlined:hover {
-    background-color: $section-button;
-}
+
+.button.is-success.is-outlined:hover,
 .button.is-success.is-outlined:focus {
-    background-color: $section-button;
-    border-color: $section-button-focus-border;
+    background-color: $accent;
+    border-color: $accent;
+    color: $bg-base;
+}
+
+.button.is-rounded {
+    background-color: $accent;
+    color: $bg-base;
+    border-color: $accent;
+    font-weight: 600;
+    padding: 0.6em 2.2em;
+    transition: opacity 0.2s ease;
+
+    &:hover, &:focus {
+        opacity: 0.85;
+        background-color: $accent;
+        color: $bg-base;
+    }
 }

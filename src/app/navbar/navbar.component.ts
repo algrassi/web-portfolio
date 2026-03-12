@@ -1,25 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy, HostListener } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.scss'
+  styleUrl: './navbar.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavbarComponent {
-  test() {
-    let navMenu = document.getElementById('navMenu');
-    let navBurger = document.getElementById('navBurger');
+  isScrolled = false;
+  isMenuOpen = false;
 
-    let isActiveMenu = navBurger!.classList.contains('is-active');
+  @HostListener('window:scroll')
+  onScroll(): void {
+    this.isScrolled = window.scrollY > 40;
+  }
 
-    if(isActiveMenu) {
-      navMenu!.classList.remove('is-active');
-      navBurger!.classList.remove('is-active');
-    } else {
-      navMenu!.classList.add('is-active');
-      navBurger!.classList.add('is-active');
-    }
+  toggleMenu(): void {
+    this.isMenuOpen = !this.isMenuOpen;
   }
 }

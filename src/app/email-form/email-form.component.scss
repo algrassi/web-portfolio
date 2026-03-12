@@ -1,31 +1,87 @@
 @use "bulma/sass/utilities/mixins";
-$title-text-color: #14213D;
-$subtitle-text-color: #FCA311;
 
-.title, .label {
-    color: $title-text-color;
+$accent: #e8b84b;
+$bg-base: #0c0c14;
+$bg-surface: #111118;
+$bg-elevated: #1a1a28;
+
+.title {
+    color: #e4e4f0;
 }
-.subtitle {
-    color: $subtitle-text-color;
+
+.label {
+    color: #8080a8;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
 }
-.input, .textarea {
-    background-color: #fff;
-    color: #14213D;
+
+.input,
+.textarea {
+    background-color: $bg-elevated;
+    color: #e4e4f0;
+    border-color: #2a2a40;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+    &::placeholder {
+        color: #404060;
+    }
+
+    &:focus,
+    &:hover {
+        border-color: rgba(232, 184, 75, 0.5);
+        box-shadow: 0 0 0 3px rgba(232, 184, 75, 0.1);
+        background-color: $bg-elevated;
+        color: #e4e4f0;
+    }
+}
+
+.textarea {
+    min-height: 160px;
+    resize: vertical;
+}
+
+.avatar-wrap {
+    position: relative;
+    display: inline-flex;
+    margin: -50px auto 50px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: -30px;
+        border-radius: 50%;
+        background: radial-gradient(ellipse at center, rgba(232, 184, 75, 0.18) 0%, transparent 70%);
+        pointer-events: none;
+        z-index: 0;
+    }
 }
 
 .avatar {
+    position: relative;
+    z-index: 1;
     width: 84px;
-    margin: -50px auto 50px;
+    border-radius: 50%;
 }
 
-.is-form-page .container {
-    padding: 0 20px;
+.is-form-page {
+    background-color: $bg-base;
+    min-height: calc(100vh - 80px);
 
-    form {
-        max-width: 640px;
+    section {
+        padding-top: 4rem;
+        background-color: $bg-base;
+    }
 
-        @include mixins.from(796px){
-            margin: 60px auto 0;
+    .container {
+        padding: 0 20px;
+
+        form {
+            max-width: 640px;
+
+            @include mixins.from(796px) {
+                margin: 60px auto 0;
+            }
         }
     }
 }
@@ -40,7 +96,4 @@ $subtitle-text-color: #FCA311;
     margin-left: -0.75rem;
     margin-right: -0.75rem;
     margin-top: -0.75rem;
-    columns:not(:last-child) {
-        margin-bottom: calc(1.5rem - 0.75rem);
-    }
 }

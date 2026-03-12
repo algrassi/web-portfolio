@@ -1,49 +1,119 @@
 @use "bulma/sass/utilities/mixins";
 
-@include mixins.until(1024px){
-    .navbar {
-        .container {
-            display: block;
-        }
+$accent: #e8b84b;
+$bg-base: #0c0c14;
+
+// ── Sticky + glassmorphism ───────────────────────────────────────────────────
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 1rem 0;
+    background-color: transparent;
+    transition: background-color 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
+    border-bottom: 1px solid transparent;
+
+    &.is-scrolled {
+        background-color: rgba(12, 12, 20, 0.8);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-bottom-color: #1e1e30;
     }
-    .navbar-menu.is-active {
-        background-color: transparent;
+
+    .container {
+        align-items: stretch;
+        display: flex;
+        min-height: 3.25rem;
+        width: 100%;
+    }
+}
+
+// ── Logo ─────────────────────────────────────────────────────────────────────
+.logo-item {
+    padding: 0;
+    background-color: transparent !important;
+    transition: transform 0.2s ease;
+
+    &:hover, &:focus {
+        background-color: transparent !important;
+        transform: scale(1.06);
+    }
+}
+
+.svg {
+    max-height: 5rem;
+}
+
+// ── Nav links ────────────────────────────────────────────────────────────────
+.nav-link {
+    color: #a0a0c0;
+    font-size: 0.88rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    cursor: pointer;
+    display: inline-block;
+    transition: color 0.2s ease, transform 0.2s ease;
+    text-decoration: none;
+
+    &:hover {
+        color: $accent;
+        transform: scale(1.08);
+    }
+}
+
+// ── CTA button ───────────────────────────────────────────────────────────────
+.btn-nav {
+    display: inline-block;
+    border: 2px solid $accent;
+    color: $accent;
+    border-radius: 999px;
+    padding: 0.4em 1.4em;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+
+    &:hover {
+        background-color: $accent;
+        color: $bg-base;
+    }
+}
+
+// ── Burger ───────────────────────────────────────────────────────────────────
+.navbar-burger {
+    color: #e4e4f0;
+}
+.navbar-burger span {
+    background-color: #e4e4f0;
+    height: 2px;
+}
+.navbar-burger span:nth-child(1) { top: calc(50% - 6px); }
+.navbar-burger span:nth-child(2) { top: calc(50% - 1px); }
+.navbar-burger span:nth-child(3) { top: calc(50% + 4px); }
+
+.navbar-burger.is-active span:nth-child(1) { transform: translateY(5px) rotate(-45deg); }
+.navbar-burger.is-active span:nth-child(2) { opacity: 0; }
+.navbar-burger.is-active span:nth-child(3) { transform: translateY(-5px) rotate(45deg); opacity: 1; }
+
+// ── Mobile ───────────────────────────────────────────────────────────────────
+@include mixins.until(1024px) {
+    .navbar .container {
         display: block;
     }
-    .navbar-item{
-        .buttons{
-            justify-content: center;
-        }
+    .navbar-menu.is-active {
+        display: block;
+        background-color: rgba(12, 12, 20, 0.96);
+        backdrop-filter: blur(16px);
+        border-top: 1px solid #1e1e30;
+        padding: 1rem 0;
     }
-    .navbar-burger:active, .navbar-burger:hover {
+    .navbar-item {
+        .buttons { justify-content: center; }
+        .nav-link { display: block; padding: 0.5rem 1.5rem; }
+        .btn-nav { display: block; margin: 0.5rem 1.5rem; text-align: center; }
+    }
+    .navbar-burger:active,
+    .navbar-burger:hover {
         background-color: transparent;
     }
 }
-.svg {
-    max-height: 6rem;
-}
-
-.navbar-burger {
-    color: #14213D;
-}
-.navbar-burger span:nth-child(1) {
-    top: calc(50% - 6px);
-}
-.navbar-burger span:nth-child(2) {
-    top: calc(50% - 1px);
-}
-.navbar-burger span:nth-child(3) {
-    top: calc(50% + 4px);
-}
-
-.navbar-burger.is-active span:nth-child(1) {
-    transform: translateY(5px) rotate(-45deg);
-}
-.navbar-burger.is-active span:nth-child(2) {
-    opacity: 0;
-}
-.navbar-burger.is-active span:nth-child(3) {
-    transform: translateY(-5px) rotate(45deg);
-    opacity: 1;
-}
-

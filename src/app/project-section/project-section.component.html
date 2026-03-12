@@ -1,14 +1,12 @@
-<section class="section is-medium has-text-centered">
-    <div class="container is-narrow">
-        <h1 class="title is-spaced is-size-3-desktop is-size-4-mobile">
-            My Recent Work
-        </h1>
-        <div class="project-grid">
-            <div class="columns is-multiline is-mobile">
-                <div class="column is-12-mobile is-half-tablet is-one-third-desktop" *ngFor="let proj of projects" tabindex="0">
-                    <app-projects [project]="proj"></app-projects>
-                </div>
-            </div>
+<section class="projects-section" id="work">
+    <div class="container">
+        <p class="section-label">Portfolio</p>
+        <h2 class="section-title">My Recent Work</h2>
+        <div class="projects-grid">
+            <app-projects
+                *ngFor="let proj of projects; trackBy: trackById"
+                [project]="proj">
+            </app-projects>
         </div>
     </div>
 </section>

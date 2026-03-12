@@ -1,13 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-contacts',
   standalone: true,
-  imports: [ RouterModule ],
+  imports: [RouterModule],
   templateUrl: './contacts.component.html',
-  styleUrl: './contacts.component.scss'
+  styleUrl: './contacts.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ContactsComponent {
-
-}
+export class ContactsComponent {}

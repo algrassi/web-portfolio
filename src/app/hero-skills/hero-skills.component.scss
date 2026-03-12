@@ -1,21 +1,40 @@
-@use "bulma/sass/utilities/mixins";
+$accent: #e8b84b;
+$bg-base: #0c0c14;
+$bg-surface: #111118;
 
-.section.is-primary {
-    background-color: #435987;
-    color: white;
+.about-section {
+    background-color: $bg-surface;
+    border-top: 1px solid #1e1e30;
+    border-bottom: 1px solid #1e1e30;
+    padding: 5rem 1.5rem 4rem;
+    text-align: center;
 }
 
-.section.is-long{
-    padding-bottom: 14rem;
-
-    @include mixins.from(769px) {
-        padding-bottom: 16rem;
-    }
-    @include mixins.from(1216px) {
-        padding-bottom: 18rem;
-    }
+.section-label {
+    color: $accent;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 1rem;
 }
 
-.title {
-    padding-bottom: 2rem;
+.about-title {
+    font-family: 'Space Grotesk', sans-serif;
+    color: #e4e4f0;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 2rem;
 }
+
+.about-quote {
+    color: #7070a0;
+    font-size: 1.05rem;
+    line-height: 1.85;
+    font-style: italic;
+    border-left: 3px solid rgba(232, 184, 75, 0.4);
+    padding-left: 1.5rem;
+    text-align: left;
+}
+

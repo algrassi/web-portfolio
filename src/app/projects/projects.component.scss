@@ -1,57 +1,93 @@
-@use "bulma/sass/utilities/mixins";
+$accent: #e8b84b;
+$bg-elevated: #1a1a28;
 
-.image {
-    position: relative;
-    overflow: hidden;
-    border-radius: 0.5rem;
-    .project-thumb{
-        transform: scale(1);
-        transition: .25s ease-in-out;
-    }
-    .overlay {
-        background-color: #435987;
-    }
+.project-card {
+    background-color: $bg-elevated;
+    border: 1px solid #2a2a40;
+    border-radius: 1rem;
+    padding: 1.8rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+    cursor: default;
 
-    figcaption {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 0rem 3rem;
-        @include mixins.from(769px){
-            padding: 0rem 2rem;
-        }
-        color: #ffffff;
-        z-index: 1;
-        h1.title, p.subtitle{
-            color: #ffffff;
-            margin-bottom: 1.8rem;
-            font-weight: 500;
-        }
-    }
-
-    .overlay, figcaption {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0;
-        transition: .45s ease-in-out;
+    &:hover {
+        border-color: rgba(232, 184, 75, 0.25);
+        transform: translateY(-3px);
     }
 }
 
-.image:hover .overlay{
-    opacity: 1;
+// ── Top row: status + arrow ───────────────────────────────────────────────────
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.image:hover figcaption{
-    opacity: 1;
+.proj-status {
+    border-radius: 999px;
+    padding: 0.2em 0.8em;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+
+    &.status-on-hold {
+        background-color: rgba(232, 184, 75, 0.1);
+        color: $accent;
+        border: 1px solid rgba(232, 184, 75, 0.2);
+    }
+
+    &.status-exited {
+        background-color: rgba(100, 100, 120, 0.15);
+        color: #606080;
+        border: 1px solid rgba(100, 100, 120, 0.2);
+    }
+
+    &.status-active,
+    &.status-live {
+        background-color: rgba(74, 222, 128, 0.1);
+        color: #4ade80;
+        border: 1px solid rgba(74, 222, 128, 0.2);
+    }
 }
-@include mixins.from(769px){
-    .image:hover, .image:active .overlay{
-        opacity: 1;
-    }
-    .image:hover, .image:active figcaption{
-        opacity: 1;
-    }
+
+// ── Content ───────────────────────────────────────────────────────────────────
+.proj-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #e4e4f0;
+    letter-spacing: -0.01em;
+}
+
+.proj-desc {
+    color: #606080;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    flex: 1;
+}
+
+// ── Tags ─────────────────────────────────────────────────────────────────────
+.tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: auto;
+    padding-top: 0.5rem;
+    border-top: 1px solid #1e1e30;
+}
+
+.proj-tag {
+    color: #505070;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+}
+
+.proj-tag:not(:last-child)::after {
+    content: '·';
+    margin-left: 0.4rem;
+    color: #303050;
 }
