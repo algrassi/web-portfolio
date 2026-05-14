@@ -22,24 +22,31 @@ export class ProjectSectionComponent {
     },
     {
       id: 2,
-      name: 'City Log',
-      shortDesc: 'Secret project — details will be revealed soon',
-      status: 'Exited',
-      tags: ['TBD'],
-    },
-    {
-      id: 3,
       name: 'Skiller',
       shortDesc: 'Point & Click game to discover your Soft Skills, built with Unreal Engine 4',
       status: 'Exited',
       tags: ['Unreal Engine 4', 'C++', 'Game Design'],
     },
     {
-      id: 4,
+      id: 3,
       name: 'Creature of Exo - Deck Builder',
       shortDesc: 'A Website to build your card deck for the TCG Creature of Exo',
       status: 'On Hold',
       tags: ['React', 'Tailwind', 'Vite', 'Claude Code'],
+    },
+    {
+      id: 4,
+      name: 'Fuel',
+      shortDesc: 'Soon more details',
+      status: 'On Hold',
+      tags: ['PWA', 'JS', 'Supabase', 'PostreSQL'],
+    },
+    {
+      id: 5,
+      name: 'Deep Clean',
+      shortDesc: 'TOP SECRET!!',
+      status: 'On Hold',
+      tags: ['Unreal Engine 5', 'Blender', 'Game Design', 'Blueprint'],
     },
   ];
 
