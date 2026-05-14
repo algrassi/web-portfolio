@@ -50,6 +50,7 @@ export class ProjectSectionComponent {
     },
   ];
 
+  
   trackById(_: number, proj: Project): number {
     return proj.id;
   }
