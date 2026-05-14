@@ -2,6 +2,14 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.7.
 
+## Deploy to GitHub Pages
+
+```bash
+npx ng deploy --base-href="/"
+```
+
+This builds the app in production mode and pushes the output to the `gh-pages` branch of the repository. The site is served at [www.alessandro-grassi.com](https://www.alessandro-grassi.com) via the `src/CNAME` file included in the build.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.

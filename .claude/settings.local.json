@@ -9,7 +9,8 @@
       "Bash(npm run:*)",
       "Bash(npm test:*)",
       "Bash(npx angular-cli-ghpages:*)",
-      "Bash(npx ngh:*)"
+      "Bash(npx ngh:*)",
+      "Bash(npx ng *)"
     ]
   }
 }
